@@ -5,6 +5,9 @@ public class MouseOrbit : MonoBehaviour
 {
 	
 	public Transform targetTransform;
+	Vector3 targetPosition;
+	Quaternion targetRotation;
+
 	public float zoomSpeed = 0.1F;
 	public float distance = -10.0f;
 	public float yMinLimit = -20f;
@@ -25,23 +28,43 @@ public class MouseOrbit : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		offset = targetTransform.position;
-		//rotation = targetTransform.rotation;
-		position = targetTransform.position;
-		rotation = transform.rotation;
-		x = transform.rotation.eulerAngles.x;
-		y = transform.rotation.eulerAngles.y;
-		transform.rotation = targetTransform.rotation;
+		if (targetTransform == null) {
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			targetPosition = getCenterVector (player);
+			targetRotation = player.transform.rotation;
+		} else {
+			targetPosition = targetTransform.position;
+			targetRotation = targetTransform.rotation;
+		}
+
+		offset = targetPosition;
+		position = targetPosition;
+		rotation = targetRotation;
+		x = rotation.eulerAngles.x;
+		y = rotation.eulerAngles.y;
+		transform.rotation = rotation;
 		StartCoroutine(RotationLerp());
 		
 		// Make the rigid body not change rotation
 		if (GetComponent<Rigidbody> ())
 			GetComponent<Rigidbody> ().freezeRotation = true;
 	}
+
+	Vector3 getCenterVector(GameObject parenTobject) {
+		Vector3 center = Vector3.zero;
+		
+		Transform[] children = parenTobject.gameObject.GetComponentsInChildren<Transform>();
+		foreach (var child in children) {
+			center += child.transform.position;
+		}
+		
+		center /= children.Length;
+		return center;
+	}
 	
 	void Update ()
 	{
-		offset = Vector3.Lerp (offset, targetTransform.position, Time.deltaTime * lerpSpeed);
+		offset = Vector3.Lerp (offset, targetPosition, Time.deltaTime * lerpSpeed);
 		if (!isAnimating) updateCamera ();
 	}
 	
@@ -90,7 +113,8 @@ public class MouseOrbit : MonoBehaviour
 	
 	public void changeTarget (Transform newTargetTransform)
 	{
-		targetTransform = newTargetTransform;
+		targetPosition = newTargetTransform.transform.position;
+		targetRotation = newTargetTransform.transform.rotation;
 	}
 	
 	void updateCamera ()
