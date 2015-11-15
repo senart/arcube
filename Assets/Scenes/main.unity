@@ -1016,6 +1016,7 @@ MonoBehaviour:
   selectedTexture: {fileID: 0}
   username: 
   lastScore: 0
+  lastLevel: 
 --- !u!4 &1871077376
 Transform:
   m_ObjectHideFlags: 0

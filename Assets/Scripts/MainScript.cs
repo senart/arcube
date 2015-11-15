@@ -51,6 +51,7 @@ public class MainScript : MonoBehaviour {
 				check.AddElement(newCube.transform.position);
 				if (check.Check()) {
 					GameObject.Find("Data").GetComponent<Data>().lastScore = (int)GameObject.Find("Time").GetComponent<Timer>().timeLeft;
+					GameObject.Find("Data").GetComponent<Data>().lastLevel = Application.loadedLevelName;
 					Application.LoadLevel("highscores");
 				}
 			}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Save : MonoBehaviour {
 	
-	void OnClick () {
+	public void backTapped() {
         Application.LoadLevel("main");
 	}
 }

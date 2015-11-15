@@ -8,6 +8,7 @@ public class Data : MonoBehaviour {
 	public Texture selectedTexture;
 	public string username;
 	public int lastScore;
+	public string lastLevel;
 
 	private static bool spawned = false;
 
@@ -26,6 +27,7 @@ public class Data : MonoBehaviour {
 
 		username = "Guest" + ranNumber();
 		lastScore = 0;
+		lastLevel = "0";
 	}
 
 	public string ranNumber()
