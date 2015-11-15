@@ -4,7 +4,7 @@ using System.Collections;
 public class OnClicks : MonoBehaviour {
 
 	public void GoToLevel1 () {
-		Application.LoadLevel("Level1");
+		Application.LoadLevel("tutorial");
 	}
 	public void GoToLevel2 (){
 		Application.LoadLevel("Level2");
