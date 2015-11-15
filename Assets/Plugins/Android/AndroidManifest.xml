@@ -48,6 +48,7 @@
         -->
         <uses-library android:name="com.osterhoutgroup.api.ext" android:required="false" />
     </application>
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="22" />
 </manifest>
 
 <!-- android:installLocation="preferExternal" -->

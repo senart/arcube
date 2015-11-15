@@ -18,7 +18,9 @@ public class MainScript : MonoBehaviour {
 	void OnClick() {
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		if (Physics.Raycast (ray, out hit, 100)) {
+		if (Physics.Raycast (ray, out hit, 1000)) {
+			Debug.Log (hit.point);
+			
 			Vector3 worldPosition = hit.point;
 			Vector3 targetTransformPosition = this.transform.position;
 			float x = targetTransformPosition.x;
