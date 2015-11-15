@@ -6,10 +6,7 @@ public class MainScript : MonoBehaviour {
 	public GameObject prefab;
 	private float offset = 0.5F, eps = 0.01f;  // Cube wall divided by two for offset
 	private MouseOrbit cameraOrbitScript;
-
-	LayerMask blockLayer = 1;
-	float range = Mathf.Infinity;
-	RaycastHit hit;
+	
 	Check_Square check;
 
 	// Use this for initialization

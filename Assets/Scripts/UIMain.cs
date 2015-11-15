@@ -13,4 +13,8 @@ public class UIMain : MonoBehaviour {
 	public void aboutClicked() {
 		Application.LoadLevel ("about");
 	}
+
+	public void ARClicked() {
+		Application.LoadLevel ("AR");
+	}
 }
