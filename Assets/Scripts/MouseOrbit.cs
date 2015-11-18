@@ -7,6 +7,7 @@ public class MouseOrbit : MonoBehaviour
 	public Transform targetTransform;
 	Vector3 targetPosition;
 	Quaternion targetRotation;
+	GameObject player;
 
 	public float zoomSpeed = 0.1F;
 	public float distance = -10.0f;
@@ -28,8 +29,8 @@ public class MouseOrbit : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
 		if (targetTransform == null) {
-			GameObject player = GameObject.FindGameObjectWithTag ("Player");
 			targetPosition = getCenterVector (player);
 			targetRotation = player.transform.rotation;
 		} else {
@@ -119,6 +120,13 @@ public class MouseOrbit : MonoBehaviour
 	
 	void updateCamera ()
 	{
+		if (targetTransform == null) {
+			targetPosition = getCenterVector (player);
+			targetRotation = player.transform.rotation;
+		} else {
+			targetPosition = targetTransform.position;
+			targetRotation = targetTransform.rotation;
+		}
 		if (Input.touchCount == 2)
 			TouchZoom ();
 		Vector3 negDistance = new Vector3 (0.0f, 0.0f, -distance);
