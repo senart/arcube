@@ -69,6 +69,17 @@ public class MouseOrbit : MonoBehaviour
 		offset = Vector3.Lerp (offset, targetPosition, Time.deltaTime * lerpSpeed);
 		if (!isAnimating) updateCamera ();
 	}
+
+	void LateUpdate() {
+		if (Input.GetMouseButton (0)) {
+			if (isAnimating) return;
+			x -= Input.GetAxis ("Mouse Y") * xSpeed * distance * 0.02f * dragSpeed;
+			y += Input.GetAxis ("Mouse X") * ySpeed * 0.02f;
+			x = ClampAngle (x, yMinLimit, yMaxLimit);
+			
+			rotation = Quaternion.Euler (x, y, 0);
+		}
+	}
 	
 	public void OnScroll ()
 	{
@@ -105,12 +116,7 @@ public class MouseOrbit : MonoBehaviour
 	
 	public void OnDrag ()
 	{
-		if (isAnimating) return;
-		x -= Input.GetAxis ("Mouse Y") * xSpeed * distance * 0.02f * dragSpeed;
-		y += Input.GetAxis ("Mouse X") * ySpeed * 0.02f;
-		x = ClampAngle (x, yMinLimit, yMaxLimit);
-		
-		rotation = Quaternion.Euler (x, y, 0);
+
 	}
 	
 	public void changeTarget (Transform newTargetTransform)

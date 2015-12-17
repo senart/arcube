@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject prefab;
 
 	private Check_Square check;
+	private bool MouseButtonDown = false;
+	private bool MouseButtonUp = false;
 	private Vector3 normal; // the triangle we hit with the RaycastHit, in order to cancel on drag
 	private Collider clickedCollider;
 
@@ -26,33 +28,42 @@ public class PlayerScript : MonoBehaviour {
 		check = GetComponent<Check_Square> ();
 	}
 
-	void FixedUpdate() {
+	void Update() {
+		// Input collections needs to be in Update because of frame skipping in FixedUpdate
 		if (Input.GetMouseButtonDown (0)) {
+			MouseButtonDown = true;
+		}
+
+		if (Input.GetMouseButtonUp (0)) {
+			MouseButtonUp = true;
+		}
+	}
+
+	void FixedUpdate() {
+		if (MouseButtonDown) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit, 1000)) {
 				normal = hit.normal;  // To prevent bug where you click a cube and onDrag anywhere else it still spawns a cube
 				clickedCollider = hit.collider;
 			}
+			MouseButtonDown = false;
 		}
 
-		if (Input.GetMouseButtonUp (0)) {
-			Debug.Log("We clicked!");
+		if (MouseButtonUp) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit, 1000)) {
-				Debug.Log("Checking for drag...");
 				if (normal == hit.normal && clickedCollider == hit.collider) {
-					Debug.Log("Good to go!");
 					spawnNewCube(hit);
-				} else { Debug.Log("FAILED!"); }
+				}
 			}
-
+			MouseButtonUp = false;
 		}
 	}
 
 	private void spawnNewCube(RaycastHit hit) {
-		Vector3 targetTransformPosition = hit.transform.position;
+		Vector3 targetTransformPosition = hit.transform.localPosition;
 		
 		switch (getHitFace(hit)) {
 		case HitFace.Up: targetTransformPosition += new Vector3 (0, transform.localScale.y, 0); break;
@@ -61,11 +72,13 @@ public class PlayerScript : MonoBehaviour {
 		case HitFace.West: targetTransformPosition += new Vector3 (-transform.localScale.x, 0, 0); break;
 		case HitFace.North: targetTransformPosition += new Vector3 (0, 0, transform.localScale.z); break;
 		case HitFace.South: targetTransformPosition += new Vector3 (0, 0, -transform.localScale.z); break;
-		case HitFace.None: Debug.LogError("FaceHit Should never be None!"); break;
+		case HitFace.None: Debug.LogError("FaceHit Should never be None!"); return;
 		}
 
 		GameObject newCube = (GameObject)Instantiate(prefab, targetTransformPosition, Quaternion.identity);
-		newCube.transform.parent = this.transform;
+		newCube.transform.parent = transform;
+		newCube.transform.localPosition = targetTransformPosition;
+		newCube.transform.localScale = transform.localScale;
 		Debug.Log("Done!");
 		check.AddElement(newCube.transform.position);
 		if (check.Check()) {
@@ -81,11 +94,13 @@ public class PlayerScript : MonoBehaviour {
 		
 		if (incomingVec == new Vector3(0, -1, -1)) return HitFace.South;
 		if (incomingVec == new Vector3(0, -1, 1)) return HitFace.North;
-		if (incomingVec == new Vector3(0, 0, 0)) return HitFace.Up;
+		if (incomingVec == Vector3.zero) return HitFace.Up;
 		if (incomingVec == new Vector3(0, -2, 0)) return HitFace.Down;
 		if (incomingVec == new Vector3(-1, -1, 0)) return HitFace.West;
 		if (incomingVec == new Vector3(1, -1, 0)) return HitFace.East;
-		
+
+		Debug.Log(incomingVec);
+		Debug.Log(Vector3.zero);
 		return HitFace.None;
 	}
 }
