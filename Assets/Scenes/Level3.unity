@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 527224251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00208986411, y: .00208986411, z: .00208986411}
+  m_LocalScale: {x: .00189573457, y: .00189573457, z: .00189573457}
   m_Children:
   - {fileID: 338886121}
   - {fileID: 922382280}
@@ -561,11 +561,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -358.5
+      value: -307
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 406
+      value: 455
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -719,6 +719,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 777010869}
   - 114: {fileID: 777010870}
+  - 114: {fileID: 777010871}
   m_Layer: 0
   m_Name: Player (3)
   m_TagString: Player
@@ -753,6 +754,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6169410b446ec46a4bdc59339d98d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &777010871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777010868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe7ef92ff14947da965d1e4a4df5e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
 --- !u!1 &780625670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
+  dragSpeed: 1
   zoomSpeed: .100000001
   distance: 10
   yMinLimit: -20
@@ -1114,8 +1128,6 @@ MonoBehaviour:
   distanceMax: 20
   lerpSpeed: 2.5
   startingRotation: {x: 0, y: 0, z: 0}
-  xSpeed: 28
-  ySpeed: 40
 --- !u!114 &1325093046
 MonoBehaviour:
   m_ObjectHideFlags: 0

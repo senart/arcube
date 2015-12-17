@@ -9,6 +9,7 @@ public class MouseOrbit : MonoBehaviour
 	Quaternion targetRotation;
 	GameObject player;
 
+	public float dragSpeed = 1.0F;
 	public float zoomSpeed = 0.1F;
 	public float distance = -10.0f;
 	public float yMinLimit = -20f;
@@ -23,8 +24,8 @@ public class MouseOrbit : MonoBehaviour
 	Quaternion rotation;
 	Vector3 position;
 	bool isAnimating = true;
-	public float xSpeed = Screen.width / 8;
-	public float ySpeed = Screen.height / 8;
+	private float xSpeed = Screen.width / 8;
+	private float ySpeed = Screen.height / 8;
 	
 	// Use this for initialization
 	void Start ()
@@ -105,7 +106,7 @@ public class MouseOrbit : MonoBehaviour
 	public void OnDrag ()
 	{
 		if (isAnimating) return;
-		x -= Input.GetAxis ("Mouse Y") * xSpeed * distance * 0.02f;
+		x -= Input.GetAxis ("Mouse Y") * xSpeed * distance * 0.02f * dragSpeed;
 		y += Input.GetAxis ("Mouse X") * ySpeed * 0.02f;
 		x = ClampAngle (x, yMinLimit, yMaxLimit);
 		
