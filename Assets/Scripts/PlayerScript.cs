@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour {
 		newCube.transform.localPosition = targetTransformPosition;
 		newCube.transform.localScale = transform.localScale;
 		Debug.Log("Done!");
-		check.AddElement(newCube.transform.position);
+		check.AddElement(newCube.transform.localPosition);
 		if (check.Check()) {
 			GameObject.Find("Data").GetComponent<Data>().lastScore = (int)GameObject.Find("Time").GetComponent<Timer>().timeLeft;
 			GameObject.Find("Data").GetComponent<Data>().lastLevel = Application.loadedLevelName;

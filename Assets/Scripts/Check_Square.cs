@@ -10,7 +10,7 @@ public class Check_Square : MonoBehaviour {
 
 	void Start() {
 		foreach (Transform child in this.transform.GetComponentInChildren<Transform>()) {
-			AddElement(child.position);
+			AddElement(child.localPosition);
 		}
 	}
 
