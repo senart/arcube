@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414128}
   - 114: {fileID: 11404762}
+  - 114: {fileID: 11442906}
   m_Layer: 0
   m_Name: Player (3)
   m_TagString: Player
@@ -414,7 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a789410306c343249da572e4c7ffdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
 --- !u!114 &11415928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a789410306c343249da572e4c7ffdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
 --- !u!114 &11441082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,6 +435,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a789410306c343249da572e4c7ffdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11442906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe7ef92ff14947da965d1e4a4df5e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
@@ -450,14 +460,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a789410306c343249da572e4c7ffdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 132638, guid: a68c28769ec3544619a36765a2924f2c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192568}
