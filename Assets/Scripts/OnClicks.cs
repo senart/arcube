@@ -3,9 +3,13 @@ using System.Collections;
 
 public class OnClicks : MonoBehaviour {
 
-	public void GoToLevel1 () {
+	public void Tutorial () {
 		Application.LoadLevel("tutorial");
 	}
+    public void GoToLevel1()
+    {
+        Application.LoadLevel("Level1");
+    }
 	public void GoToLevel2 (){
 		Application.LoadLevel("Level2");
 	}
@@ -19,6 +23,6 @@ public class OnClicks : MonoBehaviour {
 		Application.LoadLevel("Level5");
 	}
 	public void GoBack (){
-		Application.LoadLevel("main");
+		Application.LoadLevel("Main_Menu");
 	}
 }

@@ -5,8 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/main.unity
+  - enabled: 1
+    path: Assets/_Scenes/Main_Menu.unity
   - enabled: 1
     path: Assets/_Scenes/Level1.unity
   - enabled: 1
@@ -21,15 +23,19 @@ EditorBuildSettings:
     path: Assets/_Scenes/main.unity
   - enabled: 1
     path: Assets/_Scenes/settings.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/about.unity
   - enabled: 1
     path: Assets/_Scenes/highscores.unity
   - enabled: 1
     path: Assets/_Scenes/GameOver.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/levelselect.unity
   - enabled: 1
     path: Assets/_Scenes/AR.unity
   - enabled: 1
     path: Assets/_Scenes/tutorial.unity
+  - enabled: 1
+    path: Assets/_Scenes/Level_Select.unity
+  - enabled: 1
+    path: Assets/_Scenes/About_Menu.unity

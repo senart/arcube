@@ -14,6 +14,6 @@ public class GameOverGoBack : MonoBehaviour {
 	}
 
 	public void goBackToLevelSelect() {
-		Application.LoadLevel ("LevelSelect");
+		Application.LoadLevel ("Level_Select");
 	}
 }

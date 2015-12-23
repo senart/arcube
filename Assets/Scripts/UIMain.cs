@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UIMain : MonoBehaviour {
 	public void startClicked() {
-		Application.LoadLevel ("levelselect");
+		Application.LoadLevel ("Level_Select");
 	}
 
 	public void settingsClicked() {
@@ -11,7 +11,7 @@ public class UIMain : MonoBehaviour {
 	}
 
 	public void aboutClicked() {
-		Application.LoadLevel ("about");
+		Application.LoadLevel ("About_Menu");
 	}
 
 	public void ARClicked() {
