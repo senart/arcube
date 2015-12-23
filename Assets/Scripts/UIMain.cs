@@ -7,7 +7,7 @@ public class UIMain : MonoBehaviour {
 	}
 
 	public void settingsClicked() {
-		Application.LoadLevel ("settings");
+		Application.LoadLevel ("Settings");
 	}
 
 	public void aboutClicked() {
