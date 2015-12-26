@@ -801,4 +801,9 @@ public class EventDelegate
 		}
 		return false;
 	}
+
+    internal static void Execute(EventDelegate which)
+    {
+        throw new System.NotImplementedException();
+    }
 }

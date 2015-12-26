@@ -335,6 +335,7 @@ GameObject:
   - 114: {fileID: 681180023}
   - 65: {fileID: 681180022}
   - 114: {fileID: 681180024}
+  - 114: {fileID: 681180025}
   m_Layer: 8
   m_Name: Start
   m_TagString: Untagged
@@ -443,6 +444,19 @@ MonoBehaviour:
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
+--- !u!114 &681180025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681180021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2667c5d5344ca4da392b973c849720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2800000, guid: 633d0a5901f33dc4aac5dbbce384b8a9, type: 3}
+  pressed: {fileID: 2800000, guid: ad086e9fcaed9e341a142cd68e01b88a, type: 3}
 --- !u!1 &795665901
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +468,7 @@ GameObject:
   - 114: {fileID: 795665903}
   - 65: {fileID: 795665902}
   - 114: {fileID: 795665904}
+  - 114: {fileID: 795665905}
   m_Layer: 8
   m_Name: About
   m_TagString: Untagged
@@ -562,6 +577,19 @@ MonoBehaviour:
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
+--- !u!114 &795665905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795665901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2667c5d5344ca4da392b973c849720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2800000, guid: 01859394aa3cbd943b433ab12cdaceed, type: 3}
+  pressed: {fileID: 2800000, guid: 7ea470228b7740a4ca22f029a2c0af35, type: 3}
 --- !u!1 &874523741
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +745,7 @@ GameObject:
   - 114: {fileID: 1040695168}
   - 65: {fileID: 1040695167}
   - 114: {fileID: 1040695169}
+  - 114: {fileID: 1040695170}
   m_Layer: 8
   m_Name: Settings
   m_TagString: Untagged
@@ -825,6 +854,19 @@ MonoBehaviour:
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
+--- !u!114 &1040695170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040695166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2667c5d5344ca4da392b973c849720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2800000, guid: 77fc66276933cbd40b07f73a44f9a304, type: 3}
+  pressed: {fileID: 2800000, guid: dd6544ddb02eb834fbb80aa25c705b94, type: 3}
 --- !u!4 &1042439865
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1082,7 @@ MonoBehaviour:
   eventReceiverMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  debug: 0
+  debug: 1
   useMouse: 1
   useTouch: 1
   allowMultiTouch: 1
@@ -1119,6 +1161,7 @@ GameObject:
   - 114: {fileID: 1879222270}
   - 65: {fileID: 1879222269}
   - 114: {fileID: 1879222271}
+  - 114: {fileID: 1879222272}
   m_Layer: 8
   m_Name: AR
   m_TagString: Untagged
@@ -1227,6 +1270,19 @@ MonoBehaviour:
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
+--- !u!114 &1879222272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879222268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2667c5d5344ca4da392b973c849720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2800000, guid: 506cf42c1acfd8d4f95a42fec6f167d9, type: 3}
+  pressed: {fileID: 2800000, guid: 33a5660fd221ef24699b54ed154fcfed, type: 3}
 --- !u!4 &1880773648
 Transform:
   m_ObjectHideFlags: 0

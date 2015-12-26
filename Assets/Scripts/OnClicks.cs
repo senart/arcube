@@ -25,4 +25,12 @@ public class OnClicks : MonoBehaviour {
 	public void GoBack (){
 		Application.LoadLevel("Main_Menu");
 	}
+    public void Scroll_Left()
+    {
+        GameObject.FindObjectOfType<UIScrollView>().Scroll(-1);
+    }
+    public void Scroll_Right()
+    {
+        GameObject.FindObjectOfType<UIScrollView>().Scroll(1);
+    }
 }
